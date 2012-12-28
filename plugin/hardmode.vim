@@ -1,51 +1,85 @@
-noremap <Left> <nop>
-noremap <Right> <nop>
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <PageUp> <nop>
-noremap <PageDown> <nop>
+let g:hardmodemsg = "VIM: g:hard Mode [ :Easy to exit ]"
 
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <PageUp> <nop>
-inoremap <PageDown> <nop>
+function! Hard()
+    set backspace=0
 
-noremap <CR> <nop>
+    nnoremap <buffer> <Left> <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> <Right> <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> <Up> <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> <Down> <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> <PageUp> <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> <PageDown> <Esc>:echom g:hardmodemsg<CR>
 
-function! Hard_Mode()
-    nnoremap <buffer> h <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
-    nnoremap <buffer> j <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
-    nnoremap <buffer> k <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
-    nnoremap <buffer> l <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
-    nnoremap <buffer> - <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
-    nnoremap <buffer> + <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
+    inoremap <buffer> <Left> <Esc>:echom g:hardmodemsg<CR>
+    inoremap <buffer> <Right> <Esc>:echom g:hardmodemsg<CR>
+    inoremap <buffer> <Up> <Esc>:echom g:hardmodemsg<CR>
+    inoremap <buffer> <Down> <Esc>:echom g:hardmodemsg<CR>
+    inoremap <buffer> <PageUp> <Esc>:echom g:hardmodemsg<CR>
+    inoremap <buffer> <PageDown> <Esc>:echom g:hardmodemsg<CR>
 
-    vnoremap <buffer> h <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
-    vnoremap <buffer> j <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
-    vnoremap <buffer> k <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
-    vnoremap <buffer> l <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
-    vnoremap <buffer> - <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
-    vnoremap <buffer> + <Esc>:echom "VIM: Hard Mode! (leader-h to exit)"<CR>
+    vnoremap <buffer> <Left> <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> <Right> <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> <Up> <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> <Down> <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> <PageUp> <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> <PageDown> <Esc>:echom g:hardmodemsg<CR>
+
+    vnoremap <buffer> h <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> j <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> k <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> l <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> - <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> + <Esc>:echom g:hardmodemsg<CR>
+
+    nnoremap <buffer> h <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> j <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> k <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> l <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> - <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> + <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> <CR> <Esc>:echom g:hardmodemsg<CR>
+
+    :echo g:hardmodemsg
 endfunction
 
-function! Easy_Mode()
-    nnoremap <buffer> h h
-    nnoremap <buffer> j j
-    nnoremap <buffer> k k
-    nnoremap <buffer> l l
-    nnoremap <buffer> - -
-    nnoremap <buffer> + +
+function! Easy()
+    set backspace=indent,eol,start
 
-    vnoremap <buffer> h h
-    vnoremap <buffer> j j
-    vnoremap <buffer> k k
-    vnoremap <buffer> l l
-    vnoremap <buffer> - -
-    vnoremap <buffer> + +
+    nunmap <buffer> <Left>
+    nunmap <buffer> <Right>
+    nunmap <buffer> <Up>
+    nunmap <buffer> <Down>
+    nunmap <buffer> <PageUp>
+    nunmap <buffer> <PageDown>
+
+    iunmap <buffer> <Left>
+    iunmap <buffer> <Right>
+    iunmap <buffer> <Up>
+    iunmap <buffer> <Down>
+    iunmap <buffer> <PageUp>
+    iunmap <buffer> <PageDown>
+
+    vunmap <buffer> <Left>
+    vunmap <buffer> <Right>
+    vunmap <buffer> <Up>
+    vunmap <buffer> <Down>
+    vunmap <buffer> <PageUp>
+    vunmap <buffer> <PageDown>
+
+    vunmap <buffer> h
+    vunmap <buffer> j
+    vunmap <buffer> k
+    vunmap <buffer> l
+    vunmap <buffer> -
+    vunmap <buffer> +
+
+    nunmap <buffer> h
+    nunmap <buffer> j
+    nunmap <buffer> k
+    nunmap <buffer> l
+    nunmap <buffer> -
+    nunmap <buffer> +
+    nunmap <buffer> <CR>
+
     :echo "You are weak..."
 endfunction
-noremap <leader>h <Esc>:call Easy_Mode()<CR>
-noremap <leader>H <Esc>:call Hard_Mode()<CR>
-call Hard_Mode()
