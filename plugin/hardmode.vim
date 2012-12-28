@@ -1,4 +1,4 @@
-let g:hardmodemsg = "VIM: g:hard Mode [ :Easy to exit ]"
+let g:hardmodemsg = "VIM: hard Mode [ :Easy to exit ]"
 
 function! Hard()
     set backspace=0
