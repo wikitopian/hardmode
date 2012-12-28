@@ -1,0 +1,4 @@
+hardmode
+========
+
+Vim: Hard Mode
