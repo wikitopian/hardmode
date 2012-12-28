@@ -1,6 +1,6 @@
 let g:hardmodemsg = "VIM: hard Mode [ :Easy to exit ]"
 
-function! Hard()
+fun! Hard()
     set backspace=0
 
     nnoremap <buffer> <Left> <Esc>:echom g:hardmodemsg<CR>
@@ -40,9 +40,9 @@ function! Hard()
     nnoremap <buffer> <CR> <Esc>:echom g:hardmodemsg<CR>
 
     :echo g:hardmodemsg
-endfunction
+endfun
 
-function! Easy()
+fun! Easy()
     set backspace=indent,eol,start
 
     nunmap <buffer> <Left>
@@ -82,4 +82,4 @@ function! Easy()
     nunmap <buffer> <CR>
 
     :echo "You are weak..."
-endfunction
+endfun
