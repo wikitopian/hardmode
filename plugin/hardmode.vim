@@ -41,7 +41,6 @@ fun! HardMode()
     nnoremap <buffer> l <Esc>:echom g:hardmodemsg<CR>
     nnoremap <buffer> - <Esc>:echom g:hardmodemsg<CR>
     nnoremap <buffer> + <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> <CR> <Esc>:echom g:hardmodemsg<CR>
 
     :echo g:hardmodemsg
 endfun
@@ -83,7 +82,6 @@ fun! EasyMode()
     nunmap <buffer> l
     nunmap <buffer> -
     nunmap <buffer> +
-    nunmap <buffer> <CR>
 
     :echo "You are weak..."
 endfun
