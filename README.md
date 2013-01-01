@@ -12,21 +12,25 @@ MAPPINGS
 --------
 
 To enable it:
+
     :call HardMode()
 
 To disable it:
+
     :call EasyMode()
 
 To enable it by default, add this to your vimrc:
+
     autocmd VimEnter,BufNewFile,BufReadPost * call HardMode()
 
 You may also wish to add the following to lines to your vimrc:
+
     nnoremap <leader>h <Esc>:call EasyMode()<CR>
     nnoremap <leader>H <Esc>:call HardMode()<CR>
 
-With those lines added, presuming your leader is still the \ key, you
-can enable Hard Mode by pressing \H while in Normal-mode and disable it
-by pressing \h while in Normal-mode.
+With those lines added, presuming your leader is still the `\` key, you
+can enable Hard Mode by pressing `\`H while in Normal-mode and disable it
+by pressing `\h` while in Normal-mode.
 
 Installation
 ------------
