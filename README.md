@@ -29,7 +29,7 @@ You may also wish to add the following to lines to your vimrc:
     nnoremap <leader>H <Esc>:call HardMode()<CR>
 
 With those lines added, presuming your leader is still the `\` key, you
-can enable Hard Mode by pressing `\`H while in Normal-mode and disable it
+can enable Hard Mode by pressing `\H` while in Normal-mode and disable it
 by pressing `\h` while in Normal-mode.
 
 Installation
