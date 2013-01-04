@@ -7,40 +7,40 @@ let g:hardmodemsg = "VIM: hard Mode [ :Easy to exit ]"
 fun! HardMode()
     set backspace=0
 
-    nnoremap <buffer> <Left> <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> <Right> <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> <Up> <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> <Down> <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> <PageUp> <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> <PageDown> <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> <Left> <Esc>:echo g:hardmodemsg<CR>
+    nnoremap <buffer> <Right> <Esc>:echo g:hardmodemsg<CR>
+    nnoremap <buffer> <Up> <Esc>:echo g:hardmodemsg<CR>
+    nnoremap <buffer> <Down> <Esc>:echo g:hardmodemsg<CR>
+    nnoremap <buffer> <PageUp> <Esc>:echo g:hardmodemsg<CR>
+    nnoremap <buffer> <PageDown> <Esc>:echo g:hardmodemsg<CR>
 
-    inoremap <buffer> <Left> <Esc>:echom g:hardmodemsg<CR>
-    inoremap <buffer> <Right> <Esc>:echom g:hardmodemsg<CR>
-    inoremap <buffer> <Up> <Esc>:echom g:hardmodemsg<CR>
-    inoremap <buffer> <Down> <Esc>:echom g:hardmodemsg<CR>
-    inoremap <buffer> <PageUp> <Esc>:echom g:hardmodemsg<CR>
-    inoremap <buffer> <PageDown> <Esc>:echom g:hardmodemsg<CR>
+    inoremap <buffer> <Left> <Esc>:echo g:hardmodemsg<CR>
+    inoremap <buffer> <Right> <Esc>:echo g:hardmodemsg<CR>
+    inoremap <buffer> <Up> <Esc>:echo g:hardmodemsg<CR>
+    inoremap <buffer> <Down> <Esc>:echo g:hardmodemsg<CR>
+    inoremap <buffer> <PageUp> <Esc>:echo g:hardmodemsg<CR>
+    inoremap <buffer> <PageDown> <Esc>:echo g:hardmodemsg<CR>
 
-    vnoremap <buffer> <Left> <Esc>:echom g:hardmodemsg<CR>
-    vnoremap <buffer> <Right> <Esc>:echom g:hardmodemsg<CR>
-    vnoremap <buffer> <Up> <Esc>:echom g:hardmodemsg<CR>
-    vnoremap <buffer> <Down> <Esc>:echom g:hardmodemsg<CR>
-    vnoremap <buffer> <PageUp> <Esc>:echom g:hardmodemsg<CR>
-    vnoremap <buffer> <PageDown> <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> <Left> <Esc>:echo g:hardmodemsg<CR>
+    vnoremap <buffer> <Right> <Esc>:echo g:hardmodemsg<CR>
+    vnoremap <buffer> <Up> <Esc>:echo g:hardmodemsg<CR>
+    vnoremap <buffer> <Down> <Esc>:echo g:hardmodemsg<CR>
+    vnoremap <buffer> <PageUp> <Esc>:echo g:hardmodemsg<CR>
+    vnoremap <buffer> <PageDown> <Esc>:echo g:hardmodemsg<CR>
 
-    vnoremap <buffer> h <Esc>:echom g:hardmodemsg<CR>
-    vnoremap <buffer> j <Esc>:echom g:hardmodemsg<CR>
-    vnoremap <buffer> k <Esc>:echom g:hardmodemsg<CR>
-    vnoremap <buffer> l <Esc>:echom g:hardmodemsg<CR>
-    vnoremap <buffer> - <Esc>:echom g:hardmodemsg<CR>
-    vnoremap <buffer> + <Esc>:echom g:hardmodemsg<CR>
+    vnoremap <buffer> h <Esc>:echo g:hardmodemsg<CR>
+    vnoremap <buffer> j <Esc>:echo g:hardmodemsg<CR>
+    vnoremap <buffer> k <Esc>:echo g:hardmodemsg<CR>
+    vnoremap <buffer> l <Esc>:echo g:hardmodemsg<CR>
+    vnoremap <buffer> - <Esc>:echo g:hardmodemsg<CR>
+    vnoremap <buffer> + <Esc>:echo g:hardmodemsg<CR>
 
-    nnoremap <buffer> h <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> j <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> k <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> l <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> - <Esc>:echom g:hardmodemsg<CR>
-    nnoremap <buffer> + <Esc>:echom g:hardmodemsg<CR>
+    nnoremap <buffer> h <Esc>:echo g:hardmodemsg<CR>
+    nnoremap <buffer> j <Esc>:echo g:hardmodemsg<CR>
+    nnoremap <buffer> k <Esc>:echo g:hardmodemsg<CR>
+    nnoremap <buffer> l <Esc>:echo g:hardmodemsg<CR>
+    nnoremap <buffer> - <Esc>:echo g:hardmodemsg<CR>
+    nnoremap <buffer> + <Esc>:echo g:hardmodemsg<CR>
 
     :echo g:hardmodemsg
 endfun
