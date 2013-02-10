@@ -2,7 +2,9 @@
 " Author:       Matt Parrott <parrott.matt@gmail.com>
 " Version:      1.0
 
-let g:hardmodemsg = "VIM: hard Mode [ :Easy to exit ]"
+if !exists('g:hardmodemsg')
+    let g:hardmodemsg = "VIM: hard Mode [ :Easy to exit ]"
+end
 
 fun! HardMode()
     set backspace=0
