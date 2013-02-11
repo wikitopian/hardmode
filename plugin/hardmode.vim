@@ -3,6 +3,7 @@
 " Version:      1.0
 
 let g:hardmodemsg = "VIM: hard Mode [ :Easy to exit ]"
+let g:hardmode_on = 0
 
 fun! HardMode()
     set backspace=0
@@ -42,6 +43,7 @@ fun! HardMode()
     nnoremap <buffer> - <Esc>:echo g:hardmodemsg<CR>
     nnoremap <buffer> + <Esc>:echo g:hardmodemsg<CR>
 
+    let g:hardmode_on = 1
     :echo g:hardmodemsg
 endfun
 
@@ -83,5 +85,14 @@ fun! EasyMode()
     nunmap <buffer> -
     nunmap <buffer> +
 
+    let g:hardmode_on = 0
     :echo "You are weak..."
+endfun
+
+fun! ToggleHardMode()
+    if g:hardmode_on
+        call EasyMode()
+    else
+        call HardMode()
+    end
 endfun
