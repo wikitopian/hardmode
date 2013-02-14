@@ -3,7 +3,7 @@
 " Version:      1.0
 
 if !exists('g:hardmodemsg')
-    let g:hardmodemsg = "VIM: hard Mode [ :Easy to exit ]"
+    let g:hardmodemsg = "VIM: hard Mode [ :EasyMode to exit ]"
 end
 
 fun! HardMode()
