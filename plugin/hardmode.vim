@@ -6,6 +6,10 @@ if !exists('g:hardmode_on')
     let g:hardmode_on = 0
 end
 
+if !exists('g:hardmode_echo')
+    let g:hardmode_echo = 1
+end
+
 if !exists('g:hardmodemsg')
     let g:hardmodemsg = "VIM: Hard Mode [ :EasyMode to exit ]"
 end
@@ -49,7 +53,10 @@ fun! HardMode()
     nnoremap <buffer> + <Esc>:echo g:hardmodemsg<CR>
 
     let g:hardmode_on = 1
-    :echo g:hardmodemsg
+
+    if g:hardmode_echo
+        :echo g:hardmodemsg
+    end
 endfun
 
 fun! EasyMode()
@@ -91,7 +98,10 @@ fun! EasyMode()
     silent! nunmap <buffer> +
 
     let g:hardmode_on = 0
-    :echo "You are weak..."
+
+    if g:hardmode_echo
+        :echo "You are weak..."
+    end
 endfun
 
 fun! ToggleHardMode()
