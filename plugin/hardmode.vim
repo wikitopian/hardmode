@@ -2,7 +2,9 @@
 " Author:       Matt Parrott <parrott.matt@gmail.com>
 " Version:      1.0
 
-let g:hardmodemsg = "VIM: hard Mode [ ':call EasyMode()' to exit]"
+if !exists('g:hardmodemsg')
+    let g:hardmodemsg = "VIM: Hard Mode [ :EasyMode to exit ]"
+end
 
 fun! HardMode()
     set backspace=0
