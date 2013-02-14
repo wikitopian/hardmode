@@ -21,7 +21,7 @@ To disable it:
 
 To enable it by default, add this to your vimrc:
 
-    autocmd VimEnter,BufNewFile,BufReadPost * call HardMode()
+    autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 You may also wish to add the following to lines to your vimrc:
 
