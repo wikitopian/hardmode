@@ -2,6 +2,11 @@
 " Author:       Matt Parrott <parrott.matt@gmail.com>
 " Version:      1.0
 
+if exists('g:loaded_hardmode')
+    finish
+endif
+let g:loaded_hardmode = 1
+
 if !exists('g:hardmode_on')
     let g:hardmode_on = 0
 end
