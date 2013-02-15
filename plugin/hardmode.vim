@@ -18,6 +18,9 @@ end
 if !exists('g:hardmodemsg')
     let g:hardmodemsg = "VIM: Hard Mode [ :EasyMode to exit ]"
 end
+if !exists('g:easymodemsg')
+    let g:easymodemsg = "You are weak..."
+end
 
 " Only echo if g:hardmode_echo = 1
 fun! HardModeEcho(message)
@@ -109,7 +112,7 @@ fun! EasyMode()
 
     let g:hardmode_on = 0
 
-    call HardModeEcho("You are weak...")
+    call HardModeEcho(g:easymodemsg)
 endfun
 
 fun! ToggleHardMode()

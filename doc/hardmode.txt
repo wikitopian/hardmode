@@ -37,6 +37,8 @@ OPTIONS                                        *hardmode-options*
 
 |'g:hardmode_echo'|      Enable/disable messages
 
-|'g:hardmodemsg'|        Message to display when enabling hardmode
+|'g:hardmodemsg'|        message to display when enabling hardmode
+
+|'g:easymodemsg'|        message to display when enabling easymode
 
  vim:tw=78:ts=8:ft=help:norl:
