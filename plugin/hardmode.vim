@@ -1,5 +1,5 @@
 " hardmode.vim - Vim: HARD MODE!!!
-" Author:       Matt Parrott <parrott.matt@gmail.com>
+" Authors:       Matt Parrott <parrott.matt@gmail.com>, Xeross
 " Version:      1.0
 
 if exists('g:loaded_hardmode')

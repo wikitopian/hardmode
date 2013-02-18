@@ -1,6 +1,6 @@
 *hardmode.txt*  Plugin for enforcing Vim motion best practices
 
-Author:  Matt Parrott <parrott.matt@gmail.com>
+Authors:  Matt Parrott <parrott.matt@gmail.com>, Xeross <xeross@github.com>
 License: GPLv2
 
 This plugin is only available if 'compatible' is not set.

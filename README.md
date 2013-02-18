@@ -45,6 +45,11 @@ then simply copy and paste:
 Once help tags have been generated, you can view the manual with
 `:help hardmode`.
 
+Project Authors
+---------------
+
+[Matt Parrott](https://github.com/wikitopian) and [Xeross](https://github.com/xeross)
+
 License
 -------
 
