@@ -2,29 +2,29 @@
 " Authors:       Matt Parrott <parrott.matt@gmail.com>, Xeross
 " Version:      1.0
 
-if exists('g:loaded_hardmode')
+if exists('g:HardMode_loaded')
     finish
 endif
-let g:loaded_hardmode = 1
+let g:HardMode_loaded = 1
 
-if !exists('g:hardmode_on')
-    let g:hardmode_on = 0
+if !exists('g:HardMode_currentMode')
+    let g:HardMode_currentMode = 'easy'
 end
 
 if !exists('g:hardmode_echo')
-    let g:hardmode_echo = 1
+    let g:HardMode_echo = 1
 end
 
-if !exists('g:hardmodemsg')
-    let g:hardmodemsg = "VIM: Hard Mode [ :EasyMode to exit ]"
+if !exists('g:HardMode_hardmodeMsg')
+    let g:HardMode_hardmodeMsg = "VIM: Hard Mode [ :EasyMode to exit ]"
 end
-if !exists('g:easymodemsg')
-    let g:easymodemsg = "You are weak..."
+if !exists('g:HardMode_easymodeMsg')
+    let g:HardMode_easymodeMsg = "You are weak..."
 end
 
-" Only echo if g:hardmode_echo = 1
+" Only echo if g:HardMode_echo = 1
 fun! HardModeEcho(message)
-    if g:hardmode_echo
+    if g:HardMode_echo
         echo a:message
     end
 endfun
@@ -32,44 +32,44 @@ endfun
 fun! HardMode()
     set backspace=0
 
-    nnoremap <buffer> <Left> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    nnoremap <buffer> <Right> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    nnoremap <buffer> <Up> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    nnoremap <buffer> <Down> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    nnoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    nnoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
+    nnoremap <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
-    inoremap <buffer> <Left> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    inoremap <buffer> <Right> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    inoremap <buffer> <Up> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    inoremap <buffer> <Down> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    inoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    inoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
+    inoremap <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
-    vnoremap <buffer> <Left> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    vnoremap <buffer> <Right> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    vnoremap <buffer> <Up> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    vnoremap <buffer> <Down> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    vnoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    vnoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
+    vnoremap <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
-    vnoremap <buffer> h <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    vnoremap <buffer> j <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    vnoremap <buffer> k <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    vnoremap <buffer> l <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    vnoremap <buffer> - <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    vnoremap <buffer> + <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
+    vnoremap <buffer> h <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> j <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> k <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> l <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> - <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> + <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
-    nnoremap <buffer> h <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    nnoremap <buffer> j <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    nnoremap <buffer> k <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    nnoremap <buffer> l <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    nnoremap <buffer> - <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
-    nnoremap <buffer> + <Esc>:call HardModeEcho(g:hardmodemsg)<CR>
+    nnoremap <buffer> h <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> j <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> k <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> l <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> - <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> + <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
-    let g:hardmode_on = 1
+    let g:HardMode_currentMode = 'hard'
 
-    call HardModeEcho(g:hardmodemsg)
+    call HardModeEcho(g:HardMode_hardmodeMsg)
 endfun
 
 fun! EasyMode()
@@ -110,13 +110,13 @@ fun! EasyMode()
     silent! nunmap <buffer> -
     silent! nunmap <buffer> +
 
-    let g:hardmode_on = 0
+    let g:HardMode_currentMode = 'easy'
 
-    call HardModeEcho(g:easymodemsg)
+    call HardModeEcho(g:HardMode_easymodeMsg)
 endfun
 
 fun! ToggleHardMode()
-    if g:hardmode_on
+    if g:HardMode_currentMode == 'hard'
         call EasyMode()
     else
         call HardMode()
