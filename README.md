@@ -23,14 +23,12 @@ To enable it by default, add this to your vimrc:
 
     autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
-You may also wish to add the following to lines to your vimrc:
+You may also wish to add the following to line to your vimrc:
 
-    nnoremap <leader>h <Esc>:call EasyMode()<CR>
-    nnoremap <leader>H <Esc>:call HardMode()<CR>
+    nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
-With those lines added, presuming your leader is still the `\` key, you
-can enable Hard Mode by pressing `\H` while in Normal-mode and disable it
-by pressing `\h` while in Normal-mode.
+With that line added, presuming your leader is still the `\` key, you
+can toggle Hard Mode by pressing `\h` while in Normal-mode.
 
 Installation
 ------------
