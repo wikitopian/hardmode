@@ -36,10 +36,10 @@ can toggle Hard Mode by pressing \h while in |Normal-mode|.
 
 OPTIONS                                        *hardmode-options*
 
-|'g:hardmode_echo'|      Enable/disable messages
+|'g:HardMode_echo'|      Enable/disable messages
 
-|'g:hardmodemsg'|        message to display when enabling hardmode
+|'g:HardMode_hardmodeMsg'|        message to display when enabling hardmode
 
-|'g:easymodemsg'|        message to display when enabling easymode
+|'g:HardMode_easymodeMsg'|        message to display when enabling easymode
 
  vim:tw=78:ts=8:ft=help:norl:
