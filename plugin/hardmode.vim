@@ -11,6 +11,10 @@ if !exists('g:HardMode_currentMode')
     let g:HardMode_currentMode = 'easy'
 end
 
+if !exists('g:HardMode_level')
+    let g:HardMode_level = 'advanced'
+end
+
 if !exists('g:HardMode_echo')
     let g:HardMode_echo = 1
 end
@@ -29,8 +33,7 @@ fun! HardModeEcho(message)
     end
 endfun
 
-fun! HardMode()
-    set backspace=0
+fun! NoArrows()
 
     nnoremap <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
     nnoremap <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
@@ -53,6 +56,10 @@ fun! HardMode()
     vnoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
     vnoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
+endfun
+
+fun! NoLetters()
+
     vnoremap <buffer> h <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
     vnoremap <buffer> j <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
     vnoremap <buffer> k <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
@@ -66,6 +73,23 @@ fun! HardMode()
     nnoremap <buffer> l <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
     nnoremap <buffer> - <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
     nnoremap <buffer> + <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+
+endfun
+
+fun! NoBackspace()
+
+    set backspace=0
+
+endfun
+
+fun! HardMode()
+
+    call NoArrows()
+
+    if g:HardMode_level != 'wannabe'
+        call NoLetters()
+        call NoBackspace()
+    end
 
     let g:HardMode_currentMode = 'hard'
 

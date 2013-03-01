@@ -42,4 +42,7 @@ OPTIONS                                        *hardmode-options*
 
 |'g:HardMode_easymodeMsg'|        message to display when enabling easymode
 
+|'g:HardMode_level'|    If set to 'wannabe' arrow keys disabled, but not hjkl
+etc. 
+
  vim:tw=78:ts=8:ft=help:norl:
