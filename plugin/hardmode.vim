@@ -11,7 +11,7 @@ if !exists('g:HardMode_currentMode')
     let g:HardMode_currentMode = 'easy'
 end
 
-if !exists('g:hardmode_echo')
+if !exists('g:HardMode_echo')
     let g:HardMode_echo = 1
 end
 
