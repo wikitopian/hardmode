@@ -20,7 +20,7 @@ if !exists('g:HardMode_echo')
 end
 
 if !exists('g:HardMode_hardmodeMsg')
-    let g:HardMode_hardmodeMsg = "VIM: Hard Mode [ :EasyMode to exit ]"
+    let g:HardMode_hardmodeMsg = "VIM: Hard Mode [ ':call EasyMode()' to exit ]"
 end
 if !exists('g:HardMode_easymodeMsg')
     let g:HardMode_easymodeMsg = "You are weak..."
