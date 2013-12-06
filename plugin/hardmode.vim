@@ -67,6 +67,12 @@ fun! NoLetters()
     vnoremap <buffer> - <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
     vnoremap <buffer> + <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
+    " Display line motions
+    vnoremap <buffer> gj <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <buffer> gk <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> gk <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <buffer> gj <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+
     nnoremap <buffer> h <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
     nnoremap <buffer> j <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
     nnoremap <buffer> k <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
