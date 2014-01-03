@@ -152,3 +152,9 @@ fun! ToggleHardMode()
         call HardMode()
     end
 endfun
+
+augroup hardmode
+    autocmd VimEnter,BufNewFile,BufReadPost * if empty(&buftype)|silent! call HardMode()|endif
+augroup END
+
+nnoremap <unique> <leader>h <Esc>:call ToggleHardMode()<CR>
