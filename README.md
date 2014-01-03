@@ -19,16 +19,17 @@ To disable it:
 
     :call EasyMode()
 
-To enable it by default, add this to your vimrc:
+To have it always enabled, add this to your vimrc:
 
-    autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+    let g:hardmode = 1
 
-You may also wish to add the following to line to your vimrc:
+Toggling it is done with `<Leader>h` by default, but you can override it
+by adding a line like this to your vimrc:
 
-    nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+    nnoremap <Leader>H <Esc>:call ToggleHardMode()<CR>
 
-With that line added, presuming your leader is still the `\` key, you
-can toggle Hard Mode by pressing `\h` while in Normal-mode.
+Presuming your leader is still the `\` key, you can toggle Hard Mode by
+pressing `\h` while in Normal-mode.
 
 Installation
 ------------
