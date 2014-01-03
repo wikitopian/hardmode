@@ -16,23 +16,21 @@ the arrow keys.
 
 MAPPINGS                                        *hardmode-mappings*
 
-To enable it:
-:call HardMode()
+To enable it: >
+	:call HardMode()
+To disable it: >
+	:call EasyMode()
+To toggle it: >
+	:call ToggleHardMode()
+To have it always enabled, add this to your |vimrc|: >
+	let g:hardmode = 1
 
-To disable it:
-:call EasyMode()
+Toggling it is done with |<Leader>|h by default, but you can override it
+by adding a line like this to your |vimrc|: >
+	nnoremap <Leader>H <Esc>:call ToggleHardMode()<CR>
 
-To toggle it:
-:call ToggleHardMode()
-
-To enable it by default, add this to your |vimrc|:
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
-You may also wish to add the following to line to your |vimrc|:
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
-
-With that line added, presuming your leader is still the \ key, you
-can toggle Hard Mode by pressing \h while in |Normal-mode|.
+Presuming your leader is still the \ key, you can toggle Hard Mode by
+pressing \h while in |Normal-mode|.
 
 OPTIONS                                        *hardmode-options*
 
