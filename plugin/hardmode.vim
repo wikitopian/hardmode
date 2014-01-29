@@ -33,115 +33,64 @@ fun! HardModeEcho(message)
     end
 endfun
 
-fun! NoArrows()
+fun! s:SafeMap(keys, modes, enable)
+    let l:nmodes = strlen(a:modes) - 1
+    let l:i = 0
+    while l:i < l:nmodes
+        for l:key in a:keys
+            if a:enable
+                if maparg(l:key, a:modes[i]) =~ 'HardMode'
+                    execute 'silent! '. a:modes[i] .'unmap <buffer> '. l:key
+                endif
+            else
+                if empty(maparg(l:key, a:modes[i]))
+                    execute a:modes[i] .'noremap <silent> <buffer> '. l:key .' <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>'
+                endif
+            endif
+        endfor
+        let l:i += 1
+    endwhile
+endfun
 
-    nnoremap <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+fun! Arrows(enable)
 
-    inoremap <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    inoremap <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    inoremap <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    inoremap <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    inoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    inoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-
-    vnoremap <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    call s:SafeMap(['<Left>', '<Right>', '<Up>', '<Down>', '<PageUp>', '<PageDown>'], 'niv', a:enable)
 
 endfun
 
-fun! NoLetters()
+fun! Letters(enable)
 
-    vnoremap <buffer> h <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> j <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> k <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> l <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> - <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> + <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-
-    " Display line motions
-    vnoremap <buffer> gj <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> gk <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> gk <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> gj <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-
-    nnoremap <buffer> h <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> j <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> k <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> l <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> - <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> + <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    call s:SafeMap(['h', 'j', 'k', 'l', '-', '+', 'gj', 'gk'], 'nv', a:enable)
 
 endfun
 
-fun! NoBackspace()
+fun! Backspace(enable)
 
-    set backspace=0
+    let l:bs = a:enable ? '0' : 'indent,eol,start'
+    execute 'set backspace='. l:bs
+
+endfun
+
+fun! s:Easy(enable)
+
+    call Arrows(a:enable)
+
+    if g:HardMode_level != 'wannabe'
+        call Letters(a:enable)
+        call Backspace(a:enable)
+    end
+
+    let g:HardMode_currentMode = a:enable ? 'easy' : 'hard'
 
 endfun
 
 fun! HardMode()
-
-    call NoArrows()
-
-    if g:HardMode_level != 'wannabe'
-        call NoLetters()
-        call NoBackspace()
-    end
-
-    let g:HardMode_currentMode = 'hard'
-
+    call s:Easy(0)
     call HardModeEcho(g:HardMode_hardmodeMsg)
 endfun
 
 fun! EasyMode()
-    set backspace=indent,eol,start
-
-    silent! nunmap <buffer> <Left>
-    silent! nunmap <buffer> <Right>
-    silent! nunmap <buffer> <Up>
-    silent! nunmap <buffer> <Down>
-    silent! nunmap <buffer> <PageUp>
-    silent! nunmap <buffer> <PageDown>
-
-    silent! iunmap <buffer> <Left>
-    silent! iunmap <buffer> <Right>
-    silent! iunmap <buffer> <Up>
-    silent! iunmap <buffer> <Down>
-    silent! iunmap <buffer> <PageUp>
-    silent! iunmap <buffer> <PageDown>
-
-    silent! vunmap <buffer> <Left>
-    silent! vunmap <buffer> <Right>
-    silent! vunmap <buffer> <Up>
-    silent! vunmap <buffer> <Down>
-    silent! vunmap <buffer> <PageUp>
-    silent! vunmap <buffer> <PageDown>
-
-    silent! vunmap <buffer> h
-    silent! vunmap <buffer> j
-    silent! vunmap <buffer> k
-    silent! vunmap <buffer> l
-    silent! vunmap <buffer> -
-    silent! vunmap <buffer> +
-
-    silent! nunmap <buffer> h
-    silent! nunmap <buffer> j
-    silent! nunmap <buffer> k
-    silent! nunmap <buffer> l
-    silent! nunmap <buffer> -
-    silent! nunmap <buffer> +
-
-    let g:HardMode_currentMode = 'easy'
-
+    call s:Easy(1)
     call HardModeEcho(g:HardMode_easymodeMsg)
 endfun
 
