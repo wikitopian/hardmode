@@ -44,7 +44,7 @@ fun! s:SafeMap(keys, modes, enable)
                 endif
             else
                 if empty(maparg(l:key, a:modes[i]))
-                    execute a:modes[i] .'noremap <buffer> '. l:key .' <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>'
+                    execute a:modes[i] .'noremap <silent> <buffer> '. l:key .' <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>'
                 endif
             endif
         endfor
