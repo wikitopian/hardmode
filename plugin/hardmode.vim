@@ -140,6 +140,13 @@ fun! EasyMode()
     silent! nunmap <buffer> -
     silent! nunmap <buffer> +
 
+    " unmap line motions
+    silent! nunmap <buffer> gj
+    silent! nunmap <buffer> gk
+
+    silent! vunmap <buffer> gj
+    silent! vunmap <buffer> gk
+
     let g:HardMode_currentMode = 'easy'
 
     call HardModeEcho(g:HardMode_easymodeMsg)
