@@ -35,50 +35,50 @@ endfun
 
 fun! NoArrows()
 
-    nnoremap <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
-    inoremap <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    inoremap <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    inoremap <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    inoremap <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    inoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    inoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <silent> <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <silent> <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <silent> <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <silent> <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <silent> <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    inoremap <silent> <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
-    vnoremap <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> <Left> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> <Right> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> <Up> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> <Down> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> <PageUp> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> <PageDown> <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
 endfun
 
 fun! NoLetters()
 
-    vnoremap <buffer> h <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> j <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> k <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> l <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> - <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> + <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> h <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> j <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> k <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> l <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> - <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> + <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
     " Display line motions
-    vnoremap <buffer> gj <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    vnoremap <buffer> gk <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> gk <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> gj <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> gj <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    vnoremap <silent> <buffer> gk <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> gk <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> gj <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
-    nnoremap <buffer> h <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> j <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> k <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> l <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> - <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
-    nnoremap <buffer> + <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> h <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> j <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> k <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> l <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> - <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
+    nnoremap <silent> <buffer> + <Esc>:call HardModeEcho(g:HardMode_hardmodeMsg)<CR>
 
 endfun
 
